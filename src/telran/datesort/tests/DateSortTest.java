@@ -13,6 +13,7 @@ class DateSortTest {
 		String[] dates = { "07-05-1990", "28-01-2010", "11-08-1990", "15-01-2010", "16/06/1970" };
 		String[] expected = { "16/06/1970", "07-05-1990", "11-08-1990", "15-01-2010", "28-01-2010" };
 		Comparator<String> comp = (d1, d2) -> {
+			// Method one
 //			int year = d1.substring(d1.length()-4).compareTo(d2.substring(d2.length()-4));
 //			int month = d1.substring(3, 5).compareTo(d2.substring(3, 5));
 //			int day = d1.substring(0, 2).compareTo(d2.substring(0, 2));
@@ -24,6 +25,8 @@ class DateSortTest {
 //			}
 //			return (day < 0 && month == 0) ? -1 : 0;
 
+			
+			// Method two 
 			int d1year = Integer.parseInt(d1.substring(d1.length() - 4));
 			int d2year = Integer.parseInt(d2.substring(d1.length() - 4));
 			int d1month = Integer.parseInt(d1.substring(3, 5));
